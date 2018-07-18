@@ -27,7 +27,6 @@ public class MappingToolsApplication implements CommandLineRunner{
         } else {
             System.out.println("Args count: none");
         }
-
         exit(0);
     }
 }
