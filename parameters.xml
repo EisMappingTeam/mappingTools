@@ -1,0 +1,27 @@
+<dmdHelper>
+    <actions>
+        <!-- Model Report processing. Parameters:
+            parameter01: MODEL JSON file name
+            parameter02: Result - Excel file
+        -->
+        <actionName>readModelReport</actionName>
+        <parameter01>C:/111/MODELS.json</parameter01>
+        <parameter02>C:/111/MODELS.xls</parameter02>
+    </actions>
+    <actions>
+        <!-- Lookup values processing. Parameters:
+            parameter01: REST URL with parameters in {}
+            parameter02: login
+            parameter03: password
+            parameter04: Result - Excel file
+            parameter05: lookup list splitted with ';'
+        -->
+        <actionName>lookupValuesProcessing</actionName>
+        <parameter01>http://dev5eis2kub101.sjclab.exigengroup.com:8080/api/lookups/v1/load/{lookupName}/en_US</parameter01>
+        <parameter02>qa</parameter02>
+        <parameter03>qa</parameter03>
+        <parameter04>C:/111/lookup.xls</parameter04>
+        <parameter05>AddressType;AddressType</parameter05>
+
+    </actions>
+</dmdHelper>
