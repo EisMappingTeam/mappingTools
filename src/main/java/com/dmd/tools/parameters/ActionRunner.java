@@ -1,7 +1,7 @@
 package com.dmd.tools.parameters;
 
-import com.dmd.parameters.StartupAction;
-import com.dmd.parameters.StartupParameters;
+import com.dmd.entity.parameters.StartupAction;
+import com.dmd.entity.parameters.StartupParameters;
 import com.dmd.tools.modelReport.ModelReportHandler;
 
 import java.io.IOException;

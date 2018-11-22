@@ -1,7 +1,6 @@
 package com.dmd;
 
-import com.dmd.parameters.StartupParameters;
-import com.dmd.tools.parameters.ActionRunner;
+import com.dmd.entity.parameters.StartupParameters;
 import com.dmd.tools.parameters.ParametersReader;
 import com.dmd.tools.rest.RestHandler;
 import org.springframework.boot.SpringApplication;

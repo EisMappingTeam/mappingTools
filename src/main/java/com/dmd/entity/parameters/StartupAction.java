@@ -1,4 +1,4 @@
-package com.dmd.parameters;
+package com.dmd.entity.parameters;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 

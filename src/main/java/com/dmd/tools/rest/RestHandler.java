@@ -56,9 +56,9 @@ public final class RestHandler {
                 throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
             }
 
-            //String output = response.getEntity(String.class);
-            //System.out.println("Output from Server .... \n");
-            //System.out.println(output);
+            String output = response.getEntity(String.class);
+            System.out.println("Output from Server .... \n");
+            System.out.println(output);
             return response;
 
         } catch (Exception e) {

@@ -1,6 +1,6 @@
 package com.dmd.tools.parameters;
 
-import com.dmd.parameters.StartupParameters;
+import com.dmd.entity.parameters.StartupParameters;
 import com.dmd.tools.files.FileHandler;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
