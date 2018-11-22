@@ -15,16 +15,16 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.8.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>2.0.5.RELEASE</version>
     </parent>
+
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
         <java.version>1.8</java.version>
         <spring.version>5.0.1.RELEASE</spring.version>
+        <!--<jackson.version>2.4.6</jackson.version>-->
     </properties>
 
     <dependencies>
@@ -33,7 +33,7 @@
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
-        <!-- TEST  -->
+        <!--TEST-->
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
@@ -42,54 +42,52 @@
             <scope>test</scope>
         </dependency>
 
-        <!--<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-        </dependency> -->
 
+        <!-- JSON -->
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.9.7</version>
+        </dependency>
 
-        <!-- spring oxm -->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework</groupId>-->
-            <!--<artifactId>spring-oxm</artifactId>-->
-            <!--<version>${spring.version}</version>-->
-        <!--</dependency>-->
-        <!-- Uses Castor for XML -->
-        <!--<dependency>-->
-            <!--<groupId>org.codehaus.castor</groupId>-->
-            <!--<artifactId>castor</artifactId>-->
-            <!--<version>1.2</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.7</version>
+        </dependency>
 
-        <!--&lt;!&ndash; Castor need this &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>xerces</groupId>-->
-            <!--<artifactId>xercesImpl</artifactId>-->
-            <!--<version>2.11.0</version>-->
-        <!--</dependency>-->
+        <!-- XML -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+            <version>2.9.4</version>
+        </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-test</artifactId>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot</artifactId>-->
-            <!--<version>1.5.8.RELEASE</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-autoconfigure</artifactId>-->
-            <!--<version>1.5.8.RELEASE</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot</artifactId>-->
-            <!--<version>1.5.8.RELEASE</version>-->
-        <!--</dependency>-->
+        <!-- EXCEL -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.12</version>
+        </dependency>
 
-
+        <!-- REST -->
+        <!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-client -->
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>1.19.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-json</artifactId>
+            <version>1.9</version>
+        </dependency>
     </dependencies>
 
     <build>

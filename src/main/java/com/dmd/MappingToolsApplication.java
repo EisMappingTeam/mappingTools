@@ -1,9 +1,11 @@
 package com.dmd;
 
-import com.dmd.services.sample.HelloMessageService;
+import com.dmd.parameters.StartupParameters;
+import com.dmd.tools.parameters.ActionRunner;
+import com.dmd.tools.parameters.ParametersReader;
+import com.dmd.tools.rest.RestHandler;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.boot.CommandLineRunner;
 
@@ -12,27 +14,22 @@ import static java.lang.System.exit;
 @SpringBootApplication
 public class MappingToolsApplication implements CommandLineRunner {
 
-    @Autowired
-    private HelloMessageService helloService;
 
     public static void main(String[] args) throws Exception {
         SpringApplication app = new SpringApplication(MappingToolsApplication.class);
-        app.setBannerMode(Banner.Mode.OFF); //don't want to see the spring logo
+        app.setBannerMode(Banner.Mode.OFF);
         app.run(args);
     }
 
-    // Put your logic here.
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("\n\n\n\nHello world\n");
-
+        StartupParameters parameters = new StartupParameters();
         if (args.length > 0) {
-            System.out.println(helloService.getMessage(args[0].toString()));
-        } else {
-            System.out.println(helloService.getMessage());
+          parameters = ParametersReader.read(args[0]);
         }
 
-
+        //ActionRunner.runActions(parameters);
+        RestHandler.requestGetWithBasicAuthentication("http://dev5eis2kub101.sjclab.exigengroup.com:8080/api/lookups/v1/load/AddressType/en_US","qa","qa");
         exit(0);
     }
 }
