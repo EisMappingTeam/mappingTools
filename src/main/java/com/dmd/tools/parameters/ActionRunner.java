@@ -25,7 +25,7 @@ public final class ActionRunner {
 
         //Lookup fetching
         for (int i = 0; i < actions.length; i++) {
-            if (RUN_MODEL_REPORT_HANDLER.equalsIgnoreCase(actions[i].getActionName())) {
+            if (RUN_LOOKUP_VALUES_PROCESSING.equalsIgnoreCase(actions[i].getActionName())) {
                 ModelReportHandler.createModelReportInExcel(actions[i].getParameter01(), actions[i].getParameter02());
                 break;
             }

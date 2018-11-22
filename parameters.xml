@@ -8,6 +8,7 @@
         <parameter01>C:/111/MODELS.json</parameter01>
         <parameter02>C:/111/MODELS.xls</parameter02>
     </actions>
+
     <actions>
         <!-- Lookup values processing. Parameters:
             parameter01: REST URL with parameters in {}
@@ -22,6 +23,21 @@
         <parameter03>qa</parameter03>
         <parameter04>C:/111/lookup.xls</parameter04>
         <parameter05>AddressType;AddressType</parameter05>
+    </actions>
 
+    <actions>
+        <!-- . Parameters:
+            parameter01:
+            parameter02:
+            parameter03:
+            parameter04:
+            parameter05:
+        -->
+        <actionName></actionName>
+        <parameter01></parameter01>
+        <parameter02></parameter02>
+        <parameter03></parameter03>
+        <parameter04></parameter04>
+        <parameter05></parameter05>
     </actions>
 </dmdHelper>
