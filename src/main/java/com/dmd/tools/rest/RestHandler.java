@@ -1,5 +1,8 @@
 package com.dmd.tools.rest;
 
+import com.dmd.entity.lookup.LookupName;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
@@ -8,6 +11,9 @@ import com.sun.jersey.api.client.config.DefaultClientConfig;
 import com.sun.jersey.api.client.filter.HTTPBasicAuthFilter;
 import com.sun.jersey.api.client.filter.LoggingFilter;
 import com.sun.jersey.api.json.JSONConfiguration;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public final class RestHandler {
 
@@ -56,9 +62,21 @@ public final class RestHandler {
                 throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
             }
 
-            String output = response.getEntity(String.class);
-            System.out.println("Output from Server .... \n");
-            System.out.println(output);
+//            String output = response.getEntity(String.class);
+//            System.out.println("Output from Server .... \n");
+//            System.out.println(output);
+//
+            //ClientResponse response2 = webResource.accept("application/json").type("application/json").put( ClientResponse.class, ln);
+
+            ObjectMapper objectMapper = new ObjectMapper();
+            String json = response.getEntity(String.class);
+            Map<String, Object> map
+                    = objectMapper.readValue(json, new TypeReference<Map<String,Object>>(){});
+
+
+
+
+
             return response;
 
         } catch (Exception e) {
