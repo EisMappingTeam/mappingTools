@@ -1,6 +1,7 @@
 package com.dmd;
 
 import com.dmd.entity.parameters.StartupParameters;
+import com.dmd.tools.parameters.ActionRunner;
 import com.dmd.tools.parameters.ParametersReader;
 import com.dmd.tools.rest.RestHandler;
 import org.springframework.boot.SpringApplication;
@@ -27,8 +28,8 @@ public class MappingToolsApplication implements CommandLineRunner {
           parameters = ParametersReader.read(args[0]);
         }
 
-        //ActionRunner.runActions(parameters);
-        RestHandler.requestGetWithBasicAuthentication("http://dev5eis2kub101.sjclab.exigengroup.com:8080/api/lookups/v1/load/AddressType/en_US","qa","qa");
+        ActionRunner.runActions(parameters);
+        //RestHandler.requestGetWithBasicAuthentication("http://dev5eis2kub101.sjclab.exigengroup.com:8080/api/lookups/v1/load/AddressType/en_US","qa","qa");
         exit(0);
     }
 }

@@ -1,39 +1,25 @@
 package com.dmd.tools.json;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public final class JsonHandler {
-    public static List<Map<String, Object>> parseModelReportJson(String jsonString) {
-        try {
+    public static List<Map<String, Object>> parseModelReportJson(String jsonString, String rootNode) throws IOException {
 
-            ObjectMapper mapper = new ObjectMapper();
 
-            Map<String, List<Map<String, Object>>> nodes = mapper.readValue(jsonString, new TypeReference<Map<String, List<Map<String, Object>>>>() {
-            });
+        ObjectMapper objectMapper = new ObjectMapper();
 
-            if (nodes.isEmpty()) {
-                return null;
-            }
+        Map<String, Object> map = objectMapper.readValue(jsonString, new TypeReference<Map<String, Object>>() {
+        });
 
-            List<Map<String, Object>> entry = nodes.get(nodes.keySet().stream().findFirst().get());
-            return entry;
-
-        } catch (JsonGenerationException e) {
-            e.printStackTrace();
-        } catch (JsonMappingException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (map.containsKey(rootNode)) {
+            return (List<Map<String, Object>>) map.get(rootNode);
         }
 
-        return null;
+        return new ArrayList<Map<String, Object>>();
     }
 
 }
