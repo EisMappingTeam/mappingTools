@@ -28,6 +28,7 @@ public class MappingToolsApplication implements CommandLineRunner {
           parameters = ParametersReader.read(args[0]);
         }
 
+
         ActionRunner.runActions(parameters);
         //RestHandler.requestGetWithBasicAuthentication("http://dev5eis2kub101.sjclab.exigengroup.com:8080/api/lookups/v1/load/AddressType/en_US","qa","qa");
         exit(0);

@@ -5,8 +5,8 @@
             parameter02: Result - Excel file
         -->
         <actionName>readModelReport</actionName>
-        <parameter01>C:/111/MODELS_Lookup.json</parameter01>
-        <parameter02>C:/111/MODELS.xls</parameter02>
+        <parameter01>C:/111/MODELS.json</parameter01>
+        <parameter02>C:/111/MODELS_attr.xls</parameter02>
     </actions>
 
     <actions>
@@ -15,7 +15,7 @@
             parameter02: Result - Excel file
         -->
         <actionName>lookupValuesProcessing</actionName>
-        <parameter01>C:/111/MODELS_Lookup.json</parameter01>
+        <parameter01>C:/111/MODELS.json</parameter01>
         <parameter02>C:/111/MODELS_Lookup.xls</parameter02>
     </actions>
 
